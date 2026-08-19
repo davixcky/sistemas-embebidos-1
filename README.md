@@ -25,6 +25,7 @@ Repositorio del grupo para las actividades de la asignatura **Sistemas Embebidos
 |   +-- ejercicio-08-tabla-de-verdad.c
 |   +-- ejercicio-09-detector-de-secuencia.c
 |   +-- ejercicio-10-filtro-media-movil.c
++-- capturas/               (capturas de OnlineGDB)
 +-- Makefile
 +-- README.md
 ```
@@ -74,6 +75,50 @@ Los programas fueron desarrollados y probados en el compilador en linea
 5. Para probar otros valores, modificar unicamente la variable de entrada declarada
    al inicio de `main` (por ejemplo `NUMERO`, `VALOR`, `REGISTRO_ESTADO`).
 
+## Capturas de pantalla
+
+Ejecucion de cada programa en el compilador en linea **OnlineGDB**
+(<https://www.onlinegdb.com/online_c_compiler>). Las imagenes estan en la carpeta `capturas/`.
+
+### Ejercicio 1 — Unidad, decena, centena y unidad de mil
+
+![Ejercicio 1 — Unidad, decena, centena y unidad de mil](capturas/ejercicio-01-descomposicion-de-numero.png)
+
+### Ejercicio 2 — Raiz cuadrada por el metodo de Newton
+
+![Ejercicio 2 — Raiz cuadrada por el metodo de Newton](capturas/ejercicio-02-raiz-cuadrada-newton.png)
+
+### Ejercicio 3 — Criba de Eratostenes
+
+![Ejercicio 3 — Criba de Eratostenes](capturas/ejercicio-03-criba-de-eratostenes.png)
+
+### Ejercicio 4 — Cuadrado como suma de impares
+
+![Ejercicio 4 — Cuadrado como suma de impares](capturas/ejercicio-04-cuadrado-suma-impares.png)
+
+### Ejercicio 5 — Secuencia de Fibonacci
+
+![Ejercicio 5 — Secuencia de Fibonacci](capturas/ejercicio-05-fibonacci.png)
+
+### Ejercicio 6 — Par o impar con operadores de bits
+
+![Ejercicio 6 — Par o impar con operadores de bits](capturas/ejercicio-06-par-impar-bitwise.png)
+
+### Ejercicio 7 — Nibble inferior y bit 5 de un registro
+
+![Ejercicio 7 — Nibble inferior y bit 5 de un registro](capturas/ejercicio-07-registro-estado.png)
+
+### Ejercicio 8 — Tabla de verdad F = (A·B) + ¬C
+
+![Ejercicio 8 — Tabla de verdad F = (A·B) + ¬C](capturas/ejercicio-08-tabla-de-verdad.png)
+
+### Ejercicio 9 — Detector de secuencia 1011
+
+![Ejercicio 9 — Detector de secuencia 1011](capturas/ejercicio-09-detector-de-secuencia.png)
+
+### Ejercicio 10 — Filtro de media movil
+
+![Ejercicio 10 — Filtro de media movil](capturas/ejercicio-10-filtro-media-movil.png)
 ## Como compilar y ejecutar localmente
 
 Requisitos: `gcc` y `make`.
