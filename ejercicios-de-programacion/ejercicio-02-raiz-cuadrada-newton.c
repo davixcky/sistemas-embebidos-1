@@ -11,9 +11,9 @@
  * {'Numero' : NUMERO, 'Raiz cuadrada usando Newton' : RESULTADO}
  *
  * Integrantes:
- *   - Integrante 1
- *   - Integrante 2
- *   - Integrante 3
+ *   - David Orozco
+ *   - Jose Torres
+ *   - Leo Rojas
  *
  * Compilador usado: OnlineGDB (https://www.onlinegdb.com/online_c_compiler)
  *                   GCC en modo C (C11)

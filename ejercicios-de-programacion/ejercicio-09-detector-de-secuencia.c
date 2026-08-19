@@ -17,9 +17,9 @@
  *   S0 --1--> S1 --0--> S2 --1--> S3 --1--> ABIERTA
  *
  * Integrantes:
- *   - Integrante 1
- *   - Integrante 2
- *   - Integrante 3
+ *   - David Orozco
+ *   - Jose Torres
+ *   - Leo Rojas
  *
  * Compilador usado: OnlineGDB (https://www.onlinegdb.com/online_c_compiler)
  *                   GCC en modo C (C11)

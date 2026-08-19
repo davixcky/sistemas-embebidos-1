@@ -4,9 +4,9 @@ Repositorio del grupo para las actividades de la asignatura **Sistemas Embebidos
 
 ## Integrantes del grupo
 
-- Integrante 1
-- Integrante 2
-- Integrante 3
+- David Orozco
+- Jose Torres
+- Leo Rojas
 
 ## Contenido del repositorio
 
