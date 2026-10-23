@@ -14,6 +14,7 @@ Repositorio del grupo para las actividades de la asignatura **Sistemas Embebidos
 .
 +-- proyecto-de-aula
 |   +-- c1-idea-aprobada-de-proyecto.txt
++-- C2-ABPR                 (avance 2 del proyecto de aula: medidor de energía con ESP32)
 +-- ejercicios-de-programacion
 |   +-- README.md            (detalle y capturas de cada ejercicio)
 |   +-- ejercicio-01-descomposicion-de-numero.c
@@ -30,6 +31,10 @@ Repositorio del grupo para las actividades de la asignatura **Sistemas Embebidos
 +-- Makefile
 +-- README.md
 ```
+
+## Proyecto de aula — Avance 2 (Corte 2)
+
+El documento del segundo avance del ABPr está en [`C2-ABPR/README.md`](C2-ABPR/README.md).
 
 ## Ejercicios calificables
 

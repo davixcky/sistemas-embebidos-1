@@ -1,0 +1,32 @@
+# Local credentials and runtime dependencies
+firmware/include/secretos.h
+firmware/.pio/
+firmware/test/prueba
+firmware/test/trama
+plataforma/node_modules/
+plataforma/.output/
+plataforma/.tanstack/
+plataforma/datos/
+pronostico/.venv/
+pronostico/datos/
+**/__pycache__/
+.env
+.env.*
+
+# Reproducible rendering intermediates and delivery archive
+docs/video/frames/
+docs/video/meshes/
+docs/video/*.blend1
+docs/entrega-c2.zip
+simulacion/xyce/*.ng.dat
+simulacion/xyce/*.xy.csv
+
+# Download large video artifacts from the linked GitHub releases.
+docs/video/*.blend
+docs/video/*.mp4
+docs/video/preview-*.png
+docs/video/base.blend
+# Derived exports and archived editable slides are available in the release ZIP.
+freecad/*.step
+hardware/3d/medidor-placa.step
+docs/presentacion/archivo/*.pptx

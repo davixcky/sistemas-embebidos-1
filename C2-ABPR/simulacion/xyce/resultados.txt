@@ -1,0 +1,33 @@
+Independent solver comparison: Xyce 7.10 vs ngspice
+Same existing fitted diode/ideal CT models; model agreement is not hardware validation.
+Nominal temperature explicitly 27 C. Additional temperatures are sensitivity cases, not qualified component corners.
+Criteria reproduce project assumptions: nominal ADC 0.15..2.45 V; overload -0.3..3.6 V; regulator input >=4.4 V.
+PTC is a fixed 0.15-ohm resistor: this does NOT simulate its trip behavior.
+Ideal 3.3-V source can absorb clamp current: rail rise and power-off behavior are NOT validated.
+No CT saturation, ADC sampling/nonlinearity, real ZMPT amplifier, USB path, mains insulation or firmware modeled.
+
+case | Xyce values | ngspice values | maximum difference | criterion
+ac_ch1 | 21.961987, 7.077978, 5.432932 | 21.961987, 7.077944, 5.432898 | 3.38201e-05 | informational
+ac_ch2 | 46.917566, 15.019764, 11.525255 | 46.917566, 15.019692, 11.525183 | 7.19125e-05 | informational
+ac_v | 0.540673, 0.169643, 0.130054 | 0.540673, 0.169643, 0.130053 | 8.1944e-07 | informational
+alim_4_75 | 4.306242 | 4.306232 | 9.69884e-06 | FAIL
+alim_5_0 | 4.556242 | 4.556232 | 9.69884e-06 | PASS
+alim_5_25 | 4.806242 | 4.806232 | 9.69884e-06 | PASS
+ch1_60A | 0.391765, 2.246227 | 0.391765, 2.246228 | 8.31731e-07 | PASS
+ch1_72A | 0.197067, 2.440940 | 0.197068, 2.440942 | 1.09353e-06 | PASS
+ch1_reposo | 1.318883, 1.319024 | 1.318883, 1.319025 | 6.78418e-07 | PASS
+ch1_sobre_150A | -0.272621, 3.543126 | -0.272628, 3.543132 | 7.4047e-06 | PASS
+ch1_sobre_200A | -0.294943, 3.586232 | -0.294951, 3.586239 | 8.12296e-06 | PASS
+ch2_30A | 0.328576, 2.309414 | 0.328577, 2.309415 | 9.29332e-07 | PASS
+ch2_34A | 0.196534, 2.441468 | 0.196535, 2.441468 | 8.26578e-07 | PASS
+ch2_armonico | 0.554849, 2.083110 | 0.554848, 2.083110 | 8.01013e-07 | PASS
+ch2_sobre_100A | -0.298880, 3.591613 | -0.298888, 3.591621 | 8.26365e-06 | PASS
+ch2_sobre_80A | -0.283614, 3.568534 | -0.283621, 3.568541 | 7.76514e-06 | PASS
+v_1_0 | 0.813009, 1.893712 | 0.813009, 1.893712 | 3.28409e-08 | PASS
+v_1_4 | 0.596868, 2.109852 | 0.596868, 2.109852 | 3.02288e-08 | PASS
+ch1_sobre_200A_temp0 | -0.373442, 3.664759 | -0.373449, 3.664766 | 7.56217e-06 | FAIL
+ch1_sobre_200A_temp15 | -0.329885, 3.621184 | -0.329893, 3.621191 | 7.88202e-06 | FAIL
+ch1_sobre_200A_temp50 | -0.227742, 3.519025 | -0.227750, 3.519034 | 8.60182e-06 | PASS
+ch2_sobre_100A_temp0 | -0.377233, 3.670087 | -0.377240, 3.670094 | 7.68571e-06 | FAIL
+ch2_sobre_100A_temp15 | -0.333760, 3.626542 | -0.333768, 3.626550 | 7.99115e-06 | FAIL
+ch2_sobre_100A_temp50 | -0.231789, 3.524442 | -0.231798, 3.524451 | 8.77502e-06 | PASS

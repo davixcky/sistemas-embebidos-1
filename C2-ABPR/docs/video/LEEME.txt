@@ -1,0 +1,35 @@
+MEDIDOR DE ENERGÍA — VIDEO PARA C2
+
+Archivo principal: medidor-animado.mp4
+Duración: 24 segundos. 1920 × 1080, 24 fps, H.264.
+Sin música ni voz: pensado para acompañar la explicación del grupo.
+
+0–6 s: gabinete cerrado, pantalla y controles.
+6–10 s: apertura mediante despiece virtual.
+10–18 s: placa, componentes y tabique interior.
+18–24 s: regreso al ensamble cerrado.
+
+Las piezas se exportaron del archivo freecad/medidor.FCStd.
+La placa y sus componentes provienen de hardware/medidor-energia.kicad_pcb.
+No son imágenes generadas por un modelo de IA. Son renders de geometría CAD
+con dimensiones y componentes definidos en los archivos del proyecto.
+La pantalla dice DEMO CAD: no muestra lecturas ni ejecuta el firmware.
+La tapa se desplaza para explicar el interior; no representa una bisagra.
+El modelo no incluye todo el cableado de la tapa. La fijación de la placa
+necesita resolver la incompatibilidad entre postes y agujeros disponibles.
+No es evidencia de fabricación, aislamiento o funcionamiento físico.
+
+La escena medidor-animado.blend incluye la textura de pantalla empaquetada.
+Se puede abrir directamente en Blender 5.1.
+
+Regeneración desde la raíz:
+  freecadcmd herramientas/exportar_video_cad.py
+  kicad-cli pcb export glb --subst-models --include-tracks --include-pads --force -o docs/video/meshes/placa.glb hardware/medidor-energia.kicad_pcb
+  BUILD_ONLY=1 blender -b -P herramientas/video_medidor.py
+  blender -b docs/video/medidor-animado.blend -P herramientas/render_video_medidor.py
+  bash herramientas/exportar_video_medidor.sh
+
+Antes de regenerar una animación modificada, apartar la carpeta frames:
+el render reanuda los fotogramas que ya existen. No mezclar versiones.
+El render usa Cycles/OptiX en NVIDIA; adaptar el dispositivo en otro equipo.
+Referencia de realización: ecualizador-esp32/docs/video/ecualizador-animado.mp4.

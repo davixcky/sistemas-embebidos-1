@@ -1,0 +1,12 @@
+
+> plataforma@ test /home/davixcky/dev/.personal/electronica/sistemas-embebidos-1/C2-ABPR/plataforma
+> vitest run
+
+
+ RUN  v5.0.5 /home/davixcky/dev/.personal/electronica/sistemas-embebidos-1/C2-ABPR/plataforma
+
+
+ Test Files  3 passed (3)
+      Tests  10 passed (10)
+   Start at  16:39:56
+   Duration  7.80s (tests 99%)

@@ -1,0 +1,473 @@
+[
+  {
+    "case": "ac_ch1",
+    "temperature_C": 27,
+    "analysis": "AC",
+    "metric": "gain at 60/3000/4000 Hz",
+    "ngspice": [
+      21.961986574982877,
+      7.077944257503105,
+      5.43289801260229
+    ],
+    "xyce": [
+      21.961986627508377,
+      7.077977912178573,
+      5.4329318326606115
+    ],
+    "max_metric_difference": 3.3820058321865076e-05,
+    "limits": null,
+    "xyce_pass": null
+  },
+  {
+    "case": "ac_ch2",
+    "temperature_C": 27,
+    "analysis": "AC",
+    "metric": "gain at 60/3000/4000 Hz",
+    "ngspice": [
+      46.91756581483876,
+      15.019691843638732,
+      11.525183165676221
+    ],
+    "xyce": [
+      46.917565928718616,
+      15.019763548860336,
+      11.525255078170918
+    ],
+    "max_metric_difference": 7.191249469684635e-05,
+    "limits": null,
+    "xyce_pass": null
+  },
+  {
+    "case": "ac_v",
+    "temperature_C": 27,
+    "analysis": "AC",
+    "metric": "gain at 60/3000/4000 Hz",
+    "ngspice": [
+      0.5406731864567426,
+      0.16964253237100954,
+      0.13005299010254306
+    ],
+    "xyce": [
+      0.5406731878283837,
+      0.16964335181074852,
+      0.13005380710253703
+    ],
+    "max_metric_difference": 8.194397389804653e-07,
+    "limits": null,
+    "xyce_pass": null
+  },
+  {
+    "case": "alim_4_75",
+    "temperature_C": 27,
+    "analysis": "DC",
+    "metric": "V at 0.5 A",
+    "ngspice": [
+      4.306231962047
+    ],
+    "xyce": [
+      4.306241660887
+    ],
+    "max_metric_difference": 9.698840000460507e-06,
+    "limits": [
+      4.4,
+      null
+    ],
+    "xyce_pass": false
+  },
+  {
+    "case": "alim_5_0",
+    "temperature_C": 27,
+    "analysis": "DC",
+    "metric": "V at 0.5 A",
+    "ngspice": [
+      4.556231962047
+    ],
+    "xyce": [
+      4.556241660887
+    ],
+    "max_metric_difference": 9.698840000460507e-06,
+    "limits": [
+      4.4,
+      null
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "alim_5_25",
+    "temperature_C": 27,
+    "analysis": "DC",
+    "metric": "V at 0.5 A",
+    "ngspice": [
+      4.806231962047
+    ],
+    "xyce": [
+      4.806241660887
+    ],
+    "max_metric_difference": 9.698840000460507e-06,
+    "limits": [
+      4.4,
+      null
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "ch1_60A",
+    "temperature_C": 27,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      0.3917648887414,
+      2.246227810447
+    ],
+    "xyce": [
+      0.3917646270018,
+      2.246226978716
+    ],
+    "max_metric_difference": 8.317310000727218e-07,
+    "limits": [
+      0.15,
+      2.45
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "ch1_72A",
+    "temperature_C": 27,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      0.197067565685,
+      2.440941580004
+    ],
+    "xyce": [
+      0.1970671621419,
+      2.440940486477
+    ],
+    "max_metric_difference": 1.0935270000622666e-06,
+    "limits": [
+      0.15,
+      2.45
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "ch1_reposo",
+    "temperature_C": 27,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      1.318883228696,
+      1.319024855771
+    ],
+    "xyce": [
+      1.318882922775,
+      1.319024177353
+    ],
+    "max_metric_difference": 6.784179999996809e-07,
+    "limits": [
+      0.15,
+      2.45
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "ch1_sobre_150A",
+    "temperature_C": 27,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      -0.2726281465159,
+      3.543131758369
+    ],
+    "xyce": [
+      -0.2726207418198,
+      3.543125685754
+    ],
+    "max_metric_difference": 7.404696099999608e-06,
+    "limits": [
+      -0.3,
+      3.6
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "ch1_sobre_200A",
+    "temperature_C": 27,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      -0.2949507057536,
+      3.586239473326
+    ],
+    "xyce": [
+      -0.2949425827953,
+      3.586231615457
+    ],
+    "max_metric_difference": 8.12295829999421e-06,
+    "limits": [
+      -0.3,
+      3.6
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "ch2_30A",
+    "temperature_C": 27,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      0.3285765699183,
+      2.309415129709
+    ],
+    "xyce": [
+      0.3285758027385,
+      2.309414200377
+    ],
+    "max_metric_difference": 9.293319997993876e-07,
+    "limits": [
+      0.15,
+      2.45
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "ch2_34A",
+    "temperature_C": 27,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      0.1965345995607,
+      2.441468336054
+    ],
+    "xyce": [
+      0.1965337729832,
+      2.441467510364
+    ],
+    "max_metric_difference": 8.265775000015907e-07,
+    "limits": [
+      0.15,
+      2.45
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "ch2_armonico",
+    "temperature_C": 27,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      0.5548479397503,
+      2.083110402562
+    ],
+    "xyce": [
+      0.5548487325423,
+      2.083109601549
+    ],
+    "max_metric_difference": 8.010130003732741e-07,
+    "limits": [
+      0.15,
+      2.45
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "ch2_sobre_100A",
+    "temperature_C": 27,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      -0.2988878401131,
+      3.591620574441
+    ],
+    "xyce": [
+      -0.2988795764625,
+      3.591612533049
+    ],
+    "max_metric_difference": 8.26365059997114e-06,
+    "limits": [
+      -0.3,
+      3.6
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "ch2_sobre_80A",
+    "temperature_C": 27,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      -0.2836214168219,
+      3.568540708761
+    ],
+    "xyce": [
+      -0.2836136516771,
+      3.568533521731
+    ],
+    "max_metric_difference": 7.765144799998236e-06,
+    "limits": [
+      -0.3,
+      3.6
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "v_1_0",
+    "temperature_C": 27,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      0.8130088355896,
+      1.893711798916
+    ],
+    "xyce": [
+      0.8130088027487,
+      1.893711820148
+    ],
+    "max_metric_difference": 3.2840899999442286e-08,
+    "limits": [
+      0.15,
+      2.45
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "v_1_4",
+    "temperature_C": 27,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      0.5968682907726,
+      2.109852390665
+    ],
+    "xyce": [
+      0.5968682605438,
+      2.109852404167
+    ],
+    "max_metric_difference": 3.022879990766114e-08,
+    "limits": [
+      0.15,
+      2.45
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "ch1_sobre_200A_temp0",
+    "temperature_C": 0,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      -0.3734493887504,
+      3.664766360886
+    ],
+    "xyce": [
+      -0.3734418265835,
+      3.664759102411
+    ],
+    "max_metric_difference": 7.562166900010325e-06,
+    "limits": [
+      -0.3,
+      3.6
+    ],
+    "xyce_pass": false
+  },
+  {
+    "case": "ch1_sobre_200A_temp15",
+    "temperature_C": 15,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      -0.3298931291033,
+      3.621191119789
+    ],
+    "xyce": [
+      -0.3298852470813,
+      3.621183539668
+    ],
+    "max_metric_difference": 7.882021999972011e-06,
+    "limits": [
+      -0.3,
+      3.6
+    ],
+    "xyce_pass": false
+  },
+  {
+    "case": "ch1_sobre_200A_temp50",
+    "temperature_C": 50,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      -0.2277501155717,
+      3.519033651688
+    ],
+    "xyce": [
+      -0.2277415137468,
+      3.519025333867
+    ],
+    "max_metric_difference": 8.601824900006383e-06,
+    "limits": [
+      -0.3,
+      3.6
+    ],
+    "xyce_pass": true
+  },
+  {
+    "case": "ch2_sobre_100A_temp0",
+    "temperature_C": 0,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      -0.3772404259543,
+      3.670094119096
+    ],
+    "xyce": [
+      -0.3772327402493,
+      3.670086682303
+    ],
+    "max_metric_difference": 7.685705000037846e-06,
+    "limits": [
+      -0.3,
+      3.6
+    ],
+    "xyce_pass": false
+  },
+  {
+    "case": "ch2_sobre_100A_temp15",
+    "temperature_C": 15,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      -0.3337676602984,
+      3.626550143955
+    ],
+    "xyce": [
+      -0.333759669153,
+      3.626542409848
+    ],
+    "max_metric_difference": 7.991145400010335e-06,
+    "limits": [
+      -0.3,
+      3.6
+    ],
+    "xyce_pass": false
+  },
+  {
+    "case": "ch2_sobre_100A_temp50",
+    "temperature_C": 50,
+    "analysis": "TRAN",
+    "metric": "min/max V",
+    "ngspice": [
+      -0.2317977104435,
+      3.524450737389
+    ],
+    "xyce": [
+      -0.2317889354282,
+      3.524442239678
+    ],
+    "max_metric_difference": 8.775015299999911e-06,
+    "limits": [
+      -0.3,
+      3.6
+    ],
+    "xyce_pass": true
+  }
+]

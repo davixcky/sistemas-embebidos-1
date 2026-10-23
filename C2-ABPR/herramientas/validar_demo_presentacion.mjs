@@ -1,0 +1,17 @@
+import {chromium} from '../plataforma/node_modules/playwright-core/index.mjs';
+import fs from 'node:fs';
+const base='http://127.0.0.1:3100';
+const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome-stable',headless:true});
+const page=await browser.newPage({viewport:{width:1440,height:1000},locale:'es-CO'});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+const response=await page.goto(base,{waitUntil:'networkidle'});
+await page.waitForSelector('.recharts-surface',{timeout:15000});
+const body=await page.locator('body').innerText();
+if(!/simulad/i.test(body)) throw new Error('Falta aviso visible de datos simulados');
+await page.screenshot({path:'docs/validacion/demo-local.png',fullPage:true});
+const api=await page.request.get(base+'/api/ultimo?nodo=demo-c2');
+const results={http:response.status(),api:api.status(),simulationLabel:/simulad/i.test(body),browserErrors:errors};
+fs.writeFileSync('docs/validacion/demo-local.json',JSON.stringify(results,null,2)+'\n');
+await browser.close();
+if(results.http!==200||results.api!==200||errors.length)throw new Error(JSON.stringify(results));
+console.log(results);

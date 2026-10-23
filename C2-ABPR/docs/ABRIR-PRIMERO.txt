@@ -1,0 +1,26 @@
+PRESENTACIÓN SELECCIONADA POR EL USUARIO
+
+Abrir: presentacion/monitoreo-consumo-esp32.pdf
+Título: Monitoreo y predicción de consumo eléctrico con ESP32.
+25 páginas. Se conserva exactamente el PDF recibido, sin alterar su contenido.
+Origen: /home/davixcky/Downloads/monitoreo-consumo-esp32.pdf
+SHA256: 4ff0be443efa41fd95955427022846d202f980d8f97b107098a48b8eaef53b70
+
+La presentación de 15 páginas y su guion quedaron en presentacion/archivo/.
+No usar su reparto de integrantes ni sus números de diapositiva con este PDF.
+El PowerPoint localizado en medidor-energia-contexto es otra revisión;
+no se presenta como una copia editable exacta del PDF seleccionado.
+
+VIDEO ACTUALIZADO PARA LA EXPOSICIÓN
+Abrir: video/medidor-revB-audio.mp4
+45 s, 1080p, narración en español, música discreta y gráficos.
+Incluye la LCD a color, tapa magnética, NeoPixels y abertura USB-C provisional.
+Los valores en pantalla son de prueba. La posición USB-C requiere medida de la placa real.
+Subtítulos opcionales integrados en el MP4 y disponibles en video/subtitulos-es.srt.
+
+El archivo video/medidor-animado.mp4 es la revisión anterior con OLED.
+No usarlo para mostrar la revisión B. El CAD y las fuentes actualizadas están en:
+/home/davixcky/dev/.personal/electronica/medidor-energia-esp32/video/revision-b
+
+Se conserva el PDF seleccionado sin cambiar sus diapositivas.
+No se ha publicado ni enviado la entrega a Teams.

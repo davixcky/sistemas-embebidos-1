@@ -1,0 +1,37 @@
+make: Entering directory '/home/davixcky/dev/.personal/electronica/sistemas-embebidos-1/C2-ABPR/firmware/test'
+g++ -std=c++17 -O2 -Wall -o prueba prueba_medicion.cpp ../lib/medicion/medicion.cpp
+./prueba
+Carga resistiva, 60 Hz (8000 muestras por ventana)
+  V eficaz (V)               medido   120.0089  esperado   120.0000  OK
+  I eficaz CH1 (A)           medido    10.0000  esperado    10.0000  OK
+  I eficaz CH2 (A)           medido     2.9999  esperado     3.0000  OK
+  P CH1 (W)                  medido  1199.9454  esperado  1200.0000  OK
+  P CH2 (W)                  medido   359.9416  esperado   360.0000  OK
+  Frecuencia (Hz)            medido    60.0000  esperado    60.0000  OK
+  THD CH1 (%)                medido     0.0531  esperado     0.0000  OK
+Motor FP 0,8 + armónicos (8000 muestras por ventana)
+  V eficaz (V)               medido   121.0460  esperado   121.0378  OK
+  I eficaz CH1 (A)           medido    20.8804  esperado    20.8806  OK
+  I eficaz CH2 (A)           medido     5.0002  esperado     5.0000  OK
+  P CH1 (W)                  medido  1929.0275  esperado  1929.6112  OK
+  P CH2 (W)                  medido   362.8646  esperado   363.0000  OK
+  Frecuencia (Hz)            medido    60.0000  esperado    60.0000  OK
+  THD CH1 (%)                medido    29.9597  esperado    30.0000  OK
+Red a 59,8 Hz, carga baja (8027 muestras por ventana)
+  V eficaz (V)               medido   117.9896  esperado   118.0000  OK
+  I eficaz CH1 (A)           medido     1.0020  esperado     1.0000  OK
+  I eficaz CH2 (A)           medido     0.5008  esperado     0.5000  OK
+  P CH1 (W)                  medido   112.1654  esperado   112.1000  OK
+  P CH2 (W)                  medido    59.0030  esperado    59.0000  OK
+  Frecuencia (Hz)            medido    59.7982  esperado    59.8000  OK
+Sin compensar multiplexado (8000 muestras por ventana)
+  V eficaz (V)               medido   120.0089  esperado   120.0000  OK
+  I eficaz CH1 (A)           medido    19.9999  esperado    20.0000  OK
+  I eficaz CH2 (A)           medido     4.9997  esperado     5.0000  OK
+  error de P CH1 sin compensar: 0.77 % (se espera > 0,5 % con FP 0,5)
+  Frecuencia (Hz)            medido    60.0000  esperado    60.0000  OK
+  THD CH1 (%)                medido     0.1390  esperado     0.0000  OK
+Codificación ADR-001 de 40 B: OK
+
+TODAS LAS PRUEBAS PASAN (0 fallas)
+make: Leaving directory '/home/davixcky/dev/.personal/electronica/sistemas-embebidos-1/C2-ABPR/firmware/test'

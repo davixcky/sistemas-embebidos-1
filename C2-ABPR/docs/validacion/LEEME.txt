@@ -1,0 +1,13 @@
+VERIFICACIÓN PARA LA EXPOSICIÓN — 23 DE OCTUBRE DE 2026
+
+medicion-pc.txt: cálculo con señales sintéticas; todas las pruebas pasan.
+compilacion-firmware.txt: compilación PlatformIO correcta para esp32dev.
+pruebas-web.txt: 10 pruebas aprobadas en 3 archivos.
+erc-medidor.rpt y erc-banco.rpt: 0 violaciones en cada esquemático.
+demo-local.json: página y API HTTP 200; aviso de datos simulados visible;
+sin excepciones de JavaScript en la visita con Chrome.
+demo-local.png: captura de la prueba con base temporal y simulador.
+
+No son pruebas del hardware físico. El DRC previo sigue teniendo nueve
+solapes de patios, documentados en ../../hardware/drc.rpt.
+La comparación independiente se conserva en ../../simulacion/xyce/.

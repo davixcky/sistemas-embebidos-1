@@ -1,0 +1,33 @@
+Independent analog simulation comparison, 2026-10-23
+
+Executed: XyceNF Release 7.10.0 and ngspice 46.
+18 existing cases plus 6 temperature sensitivity cases.
+Results: resultados.txt (readable) and resultados.json (numeric).
+Generated .cir decks, .log files and waveforms are retained alongside results.
+
+Build the isolated Xyce image (Docker required):
+  mkdir -p /tmp/c2-abpr-xyce
+  cp simulacion/xyce/Dockerfile /tmp/c2-abpr-xyce/Dockerfile
+  curl -fL 'https://xyce.sandia.gov/download/1984/?tmstv=1754506753' -o /tmp/c2-abpr-xyce/xyce.rpm
+  sha256sum /tmp/c2-abpr-xyce/xyce.rpm
+  docker build -t c2-abpr-xyce:7.10 /tmp/c2-abpr-xyce
+  python3 herramientas/comparar_simuladores.py
+
+Downloaded RPM SHA256:
+eb438521585bf23e4998affef033a97c7e633e460281ce6dfb25880ee968d872
+Official binary distribution: https://xyce.sandia.gov/downloads/executables/
+Host Python requires numpy. ngspice must be on PATH.
+Simulations run with container networking disabled and the invoking user's UID/GID.
+
+Interpretation:
+The baseline solvers agree on the extracted voltage metrics within 10 microvolts.
+The 4.75-V supply case fails the project's 4.4-V regulator-input criterion in both.
+The added 0-C and 15-C overload cases fail the stated -0.3..3.6-V limits in both.
+Temperature behavior uses the original fitted diode model, including its default
+temperature parameters; it is NOT a manufacturer-qualified BAT85 temperature model.
+Actual parts may differ. No schematic or component values were changed.
+
+This is an independent numerical solver check, not independent physical model
+validation. Both use the same ideal CT, ideal 3.3-V rail and fitted diode models.
+The regulator itself, PTC heating/tripping, USB power path, ADC sampling and real
+ZMPT amplifier are not simulated. The mains assembly and insulation are not validated.

@@ -1,0 +1,179 @@
+[
+  [
+    "Medir el total y un subcircuito",
+    "Medidor de energía con ESP32 · Avance 2",
+    "3d-medidor-cerrado.png",
+    [
+      "120 V · 60 Hz",
+      "Dos pinzas de corriente y un canal de tensión",
+      "David Orozco · Jose Torres · Leo Rojas"
+    ],
+    "David · 45 s",
+    "La factura muestra un total mensual. Este proyecto busca distinguir el consumo total del de un circuito, por ejemplo el aire acondicionado. La imagen es el diseño CAD, no una fotografía del prototipo. El avance se concentra en el acondicionamiento, la placa y el gabinete."
+  ],
+  [
+    "Tres objetivos verificables",
+    "Diseñar, construir y validar el medidor",
+    null,
+    [
+      "Diseñar las entradas para 60 A en CH1 y 30 A en CH2, dentro del rango útil del ADC.",
+      "Construir e integrar el prototipo y superar las pruebas eléctricas y de resistencia.",
+      "Programar y validar potencia con error de ±3 % o menor entre 1 A y 30 A."
+    ],
+    "David · 55 s",
+    "Objetivo general: desarrollar un medidor monofásico no invasivo de dos canales, con tensión aislada, cálculo eléctrico y publicación por Wi-Fi. El error del 3 % es una meta; no se ha demostrado en el equipo físico. El primer avance proponía tres pinzas: este corte implementa dos y conserva entradas de reserva."
+  ],
+  [
+    "La arquitectura conserva el cálculo en el ESP32",
+    "Pinzas y tensión → acondicionamiento → ADC1 → cálculo → pantalla y web",
+    "diagrama-de-bloques.png",
+    [],
+    "David · 60 s",
+    "La corriente se mide abrazando solo la fase. El ZMPT101B aporta la señal de tensión aislada. Se calcula Vrms, Irms y potencia activa a partir de las muestras; la energía integra potencia en el tiempo. ADC1 permite adquirir mientras funciona Wi-Fi. Mostrar en el diagrama la ruta completa de las señales."
+  ],
+  [
+    "La diferencia es poder explicar la medición",
+    "Referencias del diseño y fundamento del cálculo",
+    null,
+    [
+      "Shelly EM: medición comercial de dos canales.",
+      "IoTaWatt y OpenEnergyMonitor: referencias abiertas para sensores y adquisición.",
+      "Este diseño: resistencias de carga, ADC del ESP32 y cálculo propio.",
+      "P = promedio de v·i; S = Vrms·Irms; FP = P/S."
+    ],
+    "David · 60 s",
+    "No se presenta como un instrumento más preciso que los equipos comerciales. El valor académico es conocer y justificar cada etapa. Las fuentes están en las referencias 10 a 14 del README. Q calculada como raíz de S²−P² requiere cuidado con cargas no sinusoidales: no separa por sí sola toda la distorsión."
+  ],
+  [
+    "Los materiales corresponden a cada etapa",
+    "Lista completa y referencias: sección 6 del informe",
+    null,
+    [
+      "Adquisición: ESP32-DevKitC V4, dos SCT-013-000 y un ZMPT101B.",
+      "Entradas: 22 Ω / 47 Ω, polarización de 1,32 V, RC y BAT85.",
+      "Interfaz: OLED SSD1306, dos pulsadores y LED.",
+      "Montaje: placa perforada, conectores, gabinete y fuente aislada de 5,1 V."
+    ],
+    "Jose · 50 s",
+    "Indicar únicamente las piezas que realmente están compradas o montadas. La lista del informe es la lista prevista, no un inventario de compra. El banco tiene una lista propia. No llamar PCB fabricada a la placa perforada: la equivalencia con el requisito del curso queda por confirmar con el docente."
+  ],
+  [
+    "La resistencia de carga fija la señal de corriente",
+    "Diseño nominal a 27 °C · sin sobrecorriente",
+    null,
+    [
+      "CH1: 60 A → 30 mA secundarios → 22 Ω → 0,66 Vrms.",
+      "CH2: 30 A → 15 mA secundarios → 47 Ω → 0,705 Vrms.",
+      "Polarización: 3,3 × 10 / (15 + 10) = 1,32 V.",
+      "Filtro: 3,3 kΩ + 47 nF; corte cercano a 1 kHz."
+    ],
+    "Jose · 70 s",
+    "La señal alterna se centra en 1,32 V para evitar voltajes negativos en funcionamiento normal. El burden se suelda en el jack. Eso no protege una pinza desenchufada; no se desconecta bajo carga. Las protecciones BAT85 necesitan revisión: no basta con que el modelo nominal quede cerca del máximo absoluto."
+  ],
+  [
+    "La distribución coincide con el esquemático",
+    "Placa perforada de 150 × 90 mm",
+    "placa-perforada-componentes.png",
+    [
+      "ERC: 0 violaciones",
+      "DRC guardado: 0 conexiones pendientes y 9 solapes de patios"
+    ],
+    "Jose · 55 s",
+    "Distinguir conectividad de montaje. Los nueve solapes de patios están documentados; no son nueve cables faltantes. Queda revisar el ajuste físico. La placa no tiene orificios libres para los soportes M3 del gabinete: resolver clips o borde de montaje antes de fabricar. Abrir el PDF del esquemático si se pide seguir una conexión."
+  ],
+  [
+    "El gabinete separa la red de la electrónica",
+    "200 × 150 × 75 mm · modelo CAD",
+    "3d-medidor-abierto.png",
+    [
+      "Compartimento para ZMPT101B y fusible",
+      "OLED, pulsadores y LED en la tapa",
+      "Video: ../video/medidor-animado.mp4"
+    ],
+    "Jose · 65 s",
+    "Reproducir el video corto y explicar la separación de zonas. El movimiento de la tapa es un despiece virtual. El gabinete CAD no acredita fabricación, aislamiento ni resistencia mecánica. El cableado del panel y la fijación deben verificarse en el montaje real."
+  ],
+  [
+    "El banco permite comparar una carga conocida",
+    "Protocolo de verificación · no es un resultado experimental",
+    "3d-banco-abierto.png",
+    [
+      "Una fase por pinza",
+      "Referencia: pinza amperimétrica o PZEM",
+      "Calibración y prueba de 2 h pendientes"
+    ],
+    "Leo · 55 s",
+    "Explicar por qué una pinza alrededor de fase y neutro juntos no mide el consumo. La verificación de continuidad y aislamiento antecede a la energización. El banco está diseñado; no afirmar que se construyó o calibró sin evidencia. Las pruebas de resistencia figuran pendientes en la tabla 8 del informe."
+  ],
+  [
+    "Dos simuladores coinciden; la protección necesita margen",
+    "Xyce 7.10 y ngspice 46 · 24 casos por simulador",
+    null,
+    [
+      "Nominal: CH1 0,392–2,246 V; CH2 0,329–2,309 V.",
+      "Diferencia de voltajes entre solvers: menor de 10 µV.",
+      "CH2, 100 A a 15 °C: −0,334 a 3,627 V; fuera del límite usado.",
+      "Adaptador de 4,75 V: 4,306 V antes del regulador; no cumple el criterio de 4,4 V."
+    ],
+    "Leo · 70 s",
+    "Los dos solvers usan los mismos modelos: su coincidencia verifica el cálculo numérico, no la exactitud física. El barrido térmico es una prueba de sensibilidad con el modelo ajustado de diodo, no un modelo térmico validado por fabricante. No se modelan saturación de la pinza, ADC real ni disparo del PTC. La protección no está cerrada."
+  ],
+  [
+    "El software ya admite una demostración con datos simulados",
+    "Adelanto del corte 3 · no sustituye el prototipo de C2",
+    "ui-tablero-escritorio.png",
+    [
+      "10 pruebas web aprobadas; compilación de producción correcta",
+      "Firmware compilado y cálculo probado con señales sintéticas"
+    ],
+    "Leo · 55 s",
+    "La captura proviene del simulador, no del nodo físico. Se puede mostrar la recepción, historial, energía y alertas. El LSTM usa datos públicos y no demuestra precisión en una vivienda local. No dedicar más tiempo al software que al hardware exigido en este corte."
+  ],
+  [
+    "Lo pendiente está identificado",
+    "Estado documental: 23 de octubre de 2026",
+    null,
+    [
+      "Diseño, CAD, simulaciones y pruebas de software disponibles.",
+      "Montaje, gabinete físico y HardExplosion: sin evidencia de cierre en el repositorio.",
+      "Antes de montar: revisar clamp, alimentación y fijación de la placa.",
+      "Después: calibrar, conectar el nodo real y comprobar la meta de ±3 %."
+    ],
+    "Leo · 55 s",
+    "La metodología tiene tres etapas: diseño, implementación física y validación. La compra presentó retrasos y el montaje está registrado en curso desde el 16 de octubre. Actualizar solo si el grupo aporta evidencia real. La entrega documental debe quedar en GitHub/GitLab; este directorio está sin seguimiento y no se confirmó su publicación. Cerrar con los próximos pasos concretos, sin declarar terminado el prototipo."
+  ],
+  [
+    "Anexo A · Esquemático completo",
+    "Abrir hardware/medidor-energia.pdf para ampliar conexiones",
+    "esquematico.png",
+    [],
+    "Consulta",
+    "Referencia ampliable: hardware/medidor-energia.pdf. El ERC comprueba reglas eléctricas; no certifica precisión ni seguridad del montaje."
+  ],
+  [
+    "Anexo B · Tensión y alimentación",
+    "Valores y límites que se deben sustentar",
+    null,
+    [
+      "ZMPT101B: salida nominal ajustada a 2,5 V ± 0,65 V.",
+      "Divisor: 11 kΩ / 13 kΩ; relación 0,542.",
+      "Filtro de tensión: 27 nF y resistencia equivalente 5,96 kΩ.",
+      "Fuente: 5,1 V aislada; comprobar caídas reales en PTC y diodo."
+    ],
+    "Consulta",
+    "El filtro de tensión tiene una constante de tiempo cercana a la de corriente. D1 bloquea inversión de la fuente y retorno hacia el adaptador; no justifica por sí solo conectar simultáneamente USB y fuente. Espressif indica fuentes mutuamente excluyentes."
+  ],
+  [
+    "Anexo C · Evidencias y fuentes",
+    "Archivos locales para responder preguntas",
+    null,
+    [
+      "Informe completo: README.md; referencias en la sección 9.",
+      "Esquemáticos y verificaciones: hardware/.",
+      "Comparación de simuladores: simulacion/xyce/resultados.txt.",
+      "Rúbrica: material del curso, sección 1.1.9.3."
+    ],
+    "Consulta",
+    "Fuente de la rúbrica: https://nemog3762.gitlab.io/material/compiled/Sistemas%20embebidos%201.html. Figuras realizadas con KiCad, FreeCAD y scripts de dibujo, no con generación de imágenes por IA. Consultar docs/presentacion/control-entrega.md antes de salir."
+  ]
+]
